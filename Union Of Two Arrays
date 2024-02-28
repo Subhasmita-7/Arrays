@@ -1,0 +1,38 @@
+import java.util.*;
+public class Solution {
+    public static List< Integer > sortedArray(int []a, int []b) {
+        int n = a.length;
+        int m = b.length;
+        int i=0;
+        int j=0;
+        List<Integer> sorted = new ArrayList<>();
+        while(i<n && j<m){
+            if(a[i]<=b[j]){
+                if(sorted.size()==0 || sorted.get(sorted.size()-1)!=a[i]){
+                    sorted.add(a[i]);
+                }
+                 i++;
+            }
+            else{
+                if(sorted.size()==0 || sorted.get(sorted.size()-1) != b[j]){
+                    sorted.add(b[j]);
+                }
+                j++;
+            }
+        }
+        while(i<n){
+            if(sorted.get(sorted.size()-1)!=a[i]){
+                sorted.add(a[i]);
+            }
+            i++;
+        }
+        while(j<m){
+            if(sorted.get(sorted.size()-1)!=b[j]){
+                sorted.add(b[j]);
+            }
+            j++;
+        }
+        return sorted;
+        
+    }
+}
