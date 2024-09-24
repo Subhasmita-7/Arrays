@@ -1,0 +1,26 @@
+I did the code but it is in O(nlogn) complexity since i sorted the array: but its short TT
+public class Solution {
+    public static int missingNumber(int []a, int N) {
+        Arrays.sort(a);
+        int j=1;
+        for(int i=0 ; i<N ; i++){
+            if(a[i]==j){
+                j++;
+            }
+        }
+        return j;
+    }
+}
+
+
+OPTIMAL CODE:
+public static int missingNumber(int []a, int N) {
+        int sum=N*(N+1)/2;
+
+        int sum2=0;
+        for(int i=0 ; i<N-1 ; i++){
+            sum2=sum2+a[i];
+        }
+        int miss=sum-sum2;
+        return miss;
+    }
