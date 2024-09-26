@@ -1,0 +1,21 @@
+public int[] intersection(int[] nums1, int[] nums2) {
+        HashSet<Integer> n1 = new HashSet<>();
+        HashSet<Integer> n2 = new HashSet<>();
+
+        for(int i=0 ; i<nums1.length ; i++){
+            n1.add(nums1[i]);
+        }
+
+        for(int j=0 ; j<nums2.length ; j++){
+            if(n1.contains(nums2[j])){
+                n2.add(nums2[j]);
+                n1.remove(nums2[j]);
+            }
+        }
+        int []out = new int[n2.size()];
+        int k=0;
+        for(int e:n2){
+            out[k++]=e;
+        }
+        return out;
+    }
