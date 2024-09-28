@@ -16,3 +16,4 @@ public static String read(int n, int []book, int target){
         }
         return "NO";
     }
+
