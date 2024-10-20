@@ -18,7 +18,7 @@ public static List< List < Integer > > triplet(int n, int []arr) {
                     k--;
                 }
                 else{
-                    List<Integer> ar = Arrays.asList(arr[i] , arr[j] , arr[k]);
+                    List<Integer> ar = Arrays.asList(arr[i] , arr[j] , arr[k]);  //or you can just directly add here like:  ans.add(Arrays.asList(nums[i],nums[j],nums[k]));
                     a.add(ar);
                     j++;
                     k--;
